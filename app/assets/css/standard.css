@@ -1,0 +1,9 @@
+.navbar-default .navbar-brand {
+  font-size: 40px;
+  font-style: normal;
+  font-family: 'Pacifico', cursive;
+}
+
+#notification {
+  text-align: right;
+}
