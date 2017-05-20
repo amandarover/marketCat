@@ -1,0 +1,3 @@
+$(document).ready(function(){
+  $("#navbar").append("<nav class=\"navbar navbar-default\"><div class=\"container-fluid\"><div class=\"navbar-header\">      <a class=\"navbar-brand\" href=\"main.html\" text-align=\"center\">MarketCat</a>    </div>  </div><div class=\"container-fluid\">    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\"><ul class=\"nav navbar-nav navbar-left\"><li><a href=\"#\">Produtos</a></li><li><a href=\"#\">Venda</a></li><li><a href=\"#\">Relatório</a></li><li><a href=\"#\">Promoções</a></li></ul><ul class=\"nav navbar-nav navbar-right\"><li id=\"notification\"><a href=\"#\">Notificação <span class=\"glyphicon glyphicon-bell\"></span></a></li></ul></div></div></nav>");
+});
