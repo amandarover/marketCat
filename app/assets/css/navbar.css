@@ -1,0 +1,22 @@
+/* navbar */
+.navbar-default {
+    background-color: #00BCD4;
+    border-color: #00BCD4;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #E0F7FA;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #B2EBF2;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #E0F7FA;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #B2EBF2;
+}
