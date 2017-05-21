@@ -7,3 +7,8 @@
 #notification {
   text-align: right;
 }
+
+
+.vertical-offset-100{
+    padding-top:100px;
+}
