@@ -5,17 +5,17 @@ Highcharts.chart('container', {
     type: 'column'
   },
   title: {
-    text: 'Browser market shares. January, 2015 to May, 2015'
+    text: 'Relatório de Vendas'
   },
   subtitle: {
-    text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
+    text: 'Clique na coluna para ver os dias'
   },
   xAxis: {
     type: 'category'
   },
   yAxis: {
     title: {
-      text: 'Total percent market share'
+      text: 'Total de Vendas'
     }
 
   },
@@ -26,8 +26,7 @@ Highcharts.chart('container', {
     series: {
       borderWidth: 0,
       dataLabels: {
-        enabled: true,
-        format: '{point.y:.1f}%'
+        enabled: true
       }
     }
   },
@@ -41,28 +40,52 @@ Highcharts.chart('container', {
     name: 'Brands',
     colorByPoint: true,
     data: [{
-      name: 'Microsoft Internet Explorer',
+      name: 'Janeiro',
       y: 56.33,
       drilldown: 'Microsoft Internet Explorer'
     }, {
-      name: 'Chrome',
+      name: 'Fevereiro',
       y: 24.03,
       drilldown: 'Chrome'
     }, {
-      name: 'Firefox',
+      name: 'Março',
       y: 10.38,
       drilldown: 'Firefox'
     }, {
-      name: 'Safari',
+      name: 'Abril',
       y: 4.77,
       drilldown: 'Safari'
     }, {
-      name: 'Opera',
+      name: 'Maio',
       y: 0.91,
       drilldown: 'Opera'
     }, {
-      name: 'Proprietary or Undetectable',
+      name: 'Junho',
       y: 0.2,
+      drilldown: null
+    }, {
+      name: 'Julho',
+      y: 10.38,
+      drilldown: null
+    }, {
+      name: 'Agosto',
+      y: 10.38,
+      drilldown: null
+    }, {
+      name: 'Setembro',
+      y: 10.38,
+      drilldown: null
+    }, {
+      name: 'Outubro',
+      y: 10.38,
+      drilldown: null
+    }, {
+      name: 'Novembro',
+      y: 10.38,
+      drilldown: null
+    }, {
+      name: 'Dezembro',
+      y: 10.38,
       drilldown: null
     }]
   }],
