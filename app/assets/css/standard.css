@@ -3,12 +3,19 @@
   font-style: normal;
   font-family: 'Pacifico', cursive;
 }
-
+.vertical-offset-100{
+    padding-top:100px;
+}
 #notification {
   text-align: right;
 }
-
-
-.vertical-offset-100{
-    padding-top:100px;
+.btn-primary {
+    background-color: #00BCD4;
+    border-color: #00BCD4;
+    color: #E0F7FA;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+  background-color: #00ACC1;
+  border-color: #00ACC1;
+  color: #E0F7FA;
 }
