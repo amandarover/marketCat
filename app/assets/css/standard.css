@@ -19,3 +19,6 @@
   border-color: #00ACC1;
   color: #E0F7FA;
 }
+.form-group.row {
+  margin: 5px;
+}
