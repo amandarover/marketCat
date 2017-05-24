@@ -19,6 +19,15 @@
   border-color: #00ACC1;
   color: #E0F7FA;
 }
+a {
+  color: #00ACC1;
+}
+a:hover {
+  color: #00ACC1;
+}
 .form-group.row {
   margin: 5px;
+}
+.container {
+  padding-bottom: 5px;
 }
