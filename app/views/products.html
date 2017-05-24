@@ -33,53 +33,51 @@
       </div>
       <div class="modal-body">
 
-        <form>
+        <form action="#" method="post" name="formNewProduct" id="formNewProduct" onSubmit="return formValidate(this);">
 
           <div class="form-group row">
-            <label for="example-text-input" class="col-2 col-form-label">Nome</label>
-            <div class="col-8">
-              <input class="form-control" type="text" placeholder="Artisanal kale" id="example-text-input">
+            <label for="new-product-name" class="col-2 col-form-label">Nome</label>
+            <div class="col-10">
+              <input class="form-control required" type="text" name="Nome" placeholder="Nome do produto" id="new-product-name">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-search-input" class="col-2 col-form-label">Descrição</label>
             <div class="col-10">
-              <input class="form-control" type="search" placeholder="How do I shoot web" id="example-search-input">
+              <input class="form-control required" type="text" name="Descrição" placeholder="Breve descrição do produto" id="new-product-description">
             </div>
           </div>
           <div class="form-group row">
-            <label for="example-email-input" class="col-2 col-form-label">Quantidade/Estoque</label>
+            <label for="example-email-input" class="col-2 col-form-label">Quantidade do produto</label>
             <div class="col-10">
-              <input class="form-control" type="email" placeholder="bootstrap@example.com" id="example-email-input">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="example-number-input" class="col-2 col-form-label">Quantidade mínima/Estoque baixo</label>
-            <div class="col-10">
-              <input class="form-control" type="number" min="0" step="1" placeholder="42" id="example-number-input">
+              <input class="form-control required" type="number" min="0" name="Quantidade do produto" placeholder="0" id="new-product-amount">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-url-input" class="col-2 col-form-label">Unidade de medida</label>
             <div class="col-10">
-              <input class="form-control" type="url" placeholder="https://getbootstrap.com" id="example-url-input">
+              <input class="form-control required" type="text" name="Unidade de medida" placeholder="litros, gramas" id="new-product-measurement">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-number-input" class="col-2 col-form-label">Quantidade mínima do estoque</label>
+            <div class="col-10">
+              <input class="form-control required" type="number" min="0" step="1" name="Quantidade mínima do estoque" placeholder="0" id="new-product-min-amount">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-tel-input" class="col-2 col-form-label">Valor por unidade</label>
             <div class="col-10">
-              <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
-            </div>
-
-
+              <input class="form-control required" type="number" min="0" name="Valor por unidade" placeholder="0" id="new-product-price">
+            </div> <!-- inputgroup com R$ -->
+          </div>
           <div class="form-group row">
             <label for="example-datetime-local-input" class="col-2 col-form-label">Data de validade</label>
             <div class="col-10">
-              <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+              <input class="form-control required" type="datetime-local" name="Data de validade" value="12-06-2017" id="new-product-expiration-date">
             </div>
-
-
+          </div>
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary">Criar Produto</button>
@@ -91,7 +89,22 @@
 </div>
 <!-- MODAL END -->
 
+<script>
+function formValidate (form) {
+  inputs = document.getElementsByClassName("required");
+	var mensagemValidate = "";
 
+  for(var i = 0; i < inputs.length; i++){
+    if (inputs[i].value == "")	{
+      mensagemValidate += "O campo " + inputs[i].name +" é obrigatório\n";
+    }
+  }
+  if (mensagemValidate!=""){
+    alert(mensagemValidate);
+    return false;
+  }
+}
+</script>
 
 </body>
 </html>
