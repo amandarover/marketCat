@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../assets/css/standard.css">
-		<link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/standard.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
 
-		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-		<script src="../assets/javascript/navbar.js"></script>
-		<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+	<script src="../assets/javascript/navbar.js"></script>
+	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
 
-	</head>
-	<body>
-		<div id="navbar"></div>
+</head>
+<body>
+	<div id="navbar"></div>
 
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-		  Teste Modal
-		</button>
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		Teste Modal
+	</button>
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">Teste do Modal</h4>
-		      </div>
-		      <div class="modal-body">
-		        ...
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
-		      </div>
-		    </div>
-		  </div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Teste do Modal</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
 		</div>
+	</div>
+	<body>
+
+		<div class="container">
+			<h2>Vendas</h2>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Produto</th>
+						<th>Quantidade</th>
+						<th>Valor Unitario</th>
+						<th>Valor Total do Produto</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Feijão</td>
+						<td>2</td>
+						<td>R$3,00</td>
+						<td>R$6,00</td>
+					</tr>
+					<tr>
+						<td>Alface</td>
+						<td>1</td>
+						<td>R$5,00</td>
+						<td>R$5,00</td>
+					</tr>
+					<tr>
+						<td>Couve</td>
+						<td>3</td>
+						<td>R$3,00</td>
+						<td>R$9,00</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
 	</body>
+	</html>
+</body>
 </html>
-	
