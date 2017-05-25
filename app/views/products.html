@@ -9,6 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
   <script src="../assets/javascript/navbar.js"></script>
   <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/bootstrap/js/validator.min.js"></script>
 
 </head>
 <body>
@@ -33,53 +34,61 @@
       </div>
       <div class="modal-body">
 
-        <form id="formNewProduct" data-toggle="validator" role="form" onsubmit="formValidate (this)">
+        <form id="formNewProduct" data-toggle="validator" role="form">
           <div class="form-group row">
             <div class="col-10">
               <label for="new-product-name" class="col-2 col-form-label">Imagem</label>
-              <input id="new-product-image" type="file" name="Imagem" class="file required">
+              <input id="new-product-image" type="file" name="Imagem" class="file required" data-error="Adicione uma imagem" required>
+              <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="new-product-name" class="col-2 col-form-label">Nome</label>
             <div class="col-10">
-              <input class="form-control required" type="text" name="Nome" placeholder="Nome do produto" id="new-product-name">
+              <input class="form-control required" type="text" name="Nome" placeholder="Nome do produto" id="new-product-name" data-error="Informe o nome" required>
+              <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-search-input" class="col-2 col-form-label">Descrição</label>
             <div class="col-10">
-              <input class="form-control required" type="text" name="Descrição" placeholder="Breve descrição do produto" id="new-product-description">
+              <input class="form-control required" type="text" name="Descrição" placeholder="Breve descrição do produto" id="new-product-description" data-error="Informe a descrição" required>
+              <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-email-input" class="col-2 col-form-label">Quantidade do produto</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" name="Quantidade do produto" placeholder="0" id="new-product-amount">
+              <input class="form-control required" type="number" min="0" name="Quantidade do produto" placeholder="0" id="new-product-amount" data-error="Informe a quantidade" required>
+              <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-url-input" class="col-2 col-form-label">Unidade de medida</label>
             <div class="col-10">
-              <input class="form-control required" type="text" name="Unidade de medida" placeholder="litros, gramas" id="new-product-measurement">
+              <input class="form-control required" type="text" name="Unidade de medida" placeholder="litros, gramas" id="new-product-measurement" data-error="Informe a unidade de medida" required>
+              <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-number-input" class="col-2 col-form-label">Quantidade mínima do estoque</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" step="1" name="Quantidade mínima do estoque" placeholder="0" id="new-product-min-amount">
+              <input class="form-control required" type="number" min="0" step="1" name="Quantidade mínima do estoque" placeholder="0" id="new-product-min-amount" data-error="Informe a quantidade mínima de estoque" required>
+              <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-tel-input" class="col-2 col-form-label">Valor por unidade</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" name="Valor por unidade" placeholder="0" id="new-product-price">
+              <input class="form-control required" type="number" min="0" name="Valor por unidade" placeholder="0" id="new-product-price" data-error="Informe a valor por unidade" required>
+              <div class="help-block with-errors"></div>
             </div> <!-- inputgroup com R$ -->
           </div>
           <div class="form-group row">
             <label for="example-datetime-local-input" class="col-2 col-form-label">Data de validade</label>
             <div class="col-10">
-              <input class="form-control required" type="date" name="Data de validade" value="12-06-2017" id="new-product-expiration-date">
+              <input class="form-control required" type="date" name="Data de validade" value="12-06-2017" id="new-product-expiration-date" data-error="Informe a data de validade" required>
+              <div class="help-block with-errors"></div>
             </div> <!-- validaçao de data mínima min="26-05-2017" -->
           </div>
 
@@ -88,21 +97,23 @@
             <label><input id="checkbox-sale" type="checkbox" value="" onclick="toggleSale()">Este produto tem promoção?</label>
           </div>
           <div class="form-group row" id="saleFieldDate" style="display:none;">
-            <label for="example-datetime-local-input" class="col-2 col-form-label">Data final da promoção</label>
             <div class="col-10">
+              <label for="example-datetime-local-input" class="col-2 col-form-label">Data final da promoção</label>
               <input class="form-control required-sale" type="date" name="Data final da promoção" value="12-06-2017" id="new-product-expiration-date-sale">
             </div> <!-- validaçao de data mínima min="26-05-2017" -->
           </div>
           <div class="form-group row" id="saleFieldPercent" style="display:none;">
             <label for="example-tel-input" class="col-2 col-form-label">Porcentagem da promoção</label>
             <div class="col-10">
-              <input class="form-control required-sale" type="number" min="0" name="Porcentagem da promoção" placeholder="0" id="new-product-price">
+              <input class="form-control required-sale" type="number" min="0" name="Porcentagem da promoção" placeholder="0" id="new-product-percent-sale">
+              <div class="help-block with-errors"></div>
             </div> <!-- inputgroup com % -->
           </div>
           <div class="form-group row" id="saleFieldUnit" style="display:none;">
-            <label for="example-tel-input" class="col-2 col-form-label">Unidade de produto mínima para essa promoção</label>
             <div class="col-10">
-              <input class="form-control required-sale" type="number" min="0" name="Unidade de produto mínima para essa promoção" placeholder="0" id="new-product-price">
+              <label for="example-tel-input" class="col-2 col-form-label">Unidade de produto mínima para essa promoção</label>
+              <input class="form-control required-sale" type="number" min="0" name="Unidade de produto mínima para essa promoção" placeholder="0" id="new-product-min-unity-sale">
+              <div class="help-block with-errors"></div>
             </div>
           </div>
 
@@ -168,36 +179,34 @@
 </div>
 <!-- END TABLE -->
 <script>
-function formValidate (form) {
-  $('#formNewProduct').validator()
-  // inputs = document.getElementsByClassName("required");
-	// var mensagemValidate = "";
-  //
-  // for(var i = 0; i < inputs.length; i++){
-  //   if (inputs[i].value == "")	{
-  //     mensagemValidate += "O campo " + inputs[i].name +" é obrigatório\n";
-  //   }
-  // }
-  // if ($("#checkbox-sale") == true) {
-  //   inputsSale = document.getElementsByClassName("required-sale");
-  //   var mensagemValidateSale = "";
-  //
-  //   for(var i = 0; i < inputsSale.length; i++){
-  //     if (inputsSale[i].value == "")	{
-  //       mensagemValidateSale += "O campo " + inputsSale[i].name +" é obrigatório\n";
-  //     }
-  //   }
-  // }
-  // if (mensagemValidate != "" || mensagemValidateSale != ""){
-  //   alert(mensagemValidate + "\n" + mensagemValidateSale);
-  //   return false;
-  // }
-}
-
-function toggleSale (radioAnswer) {
+function toggleSale () {
   $("#saleFieldDate").toggle();
   $("#saleFieldPercent").toggle();
   $("#saleFieldUnit").toggle();
+
+  handleValidateSale ();
+}
+function handleValidateSale () {
+  if (document.getElementById("checkbox-sale").checked) {
+    $("#new-product-expiration-date-sale").attr("data-error", "Informe a data final da promoção");
+    $("#new-product-expiration-date-sale").attr("required", "true");
+
+    $("#new-product-percent-sale").attr("data-error", "Informe a porcentagem");
+    $("#new-product-percent-sale").attr("required", "true");
+
+    $("#new-product-min-unity-sale").attr("data-error", "Informe a quantidade minima do produto");
+    $("#new-product-min-unity-sale").attr("required", "true");
+  } else {
+    $("#new-product-expiration-date-sale").removeAttr("data-error", "Informe a data final da promoção");
+    $("#new-product-expiration-date-sale").removeAttr("required", "false");
+
+    $("#new-product-percent-sale").removeAttr("data-error", "Informe a porcentagem");
+    $("#new-product-percent-sale").removeAttr("required", "false");
+
+    $("#new-product-min-unity-sale").removeAttr("data-error", "Informe a quantidade minima do produto");
+    $("#new-product-min-unity-sale").removeAttr("required", "false");
+  }
+
 }
 
 </script>
