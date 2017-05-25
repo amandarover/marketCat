@@ -126,7 +126,18 @@
 		</div>
 	</div>
 
+<script>
+$(document).ready(
+  function(){
+    $('#newSaleModal').on('hidden.bs.modal', function () {
+      cleanModal();
+    });
+  }
+);
+function cleanModal () {
+  $('#new-product-amount',).val("");
+}
+</script>
 
-	</html>
 </body>
 </html>

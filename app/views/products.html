@@ -217,6 +217,29 @@ function handleValidateSale () {
   }
 
 }
+$(document).ready(
+  function(){
+    $('#newProductModal').on('hidden.bs.modal', function () {
+      cleanModal();
+    });
+  }
+);
+
+function cleanModal () {
+  $('#new-product-expiration-date',).val("");
+  $('#new-product-price').val('');
+  $('#new-product-min-amount').val('');
+  $('#new-product-measurement').val('');
+  $('#new-product-amount').val('');
+  $('#new-product-description').val('');
+  $('#new-product-name').val('');
+  $('#new-product-image').val('');
+  if (document.getElementById("checkbox-sale").checked) {
+    $('new-product-min-unity-sale').val('');
+    $('new-product-percent-sale').val('');
+    $('new-product-expiration-date-sale').val('');
+  }
+}
 </script>
 
 </body>
