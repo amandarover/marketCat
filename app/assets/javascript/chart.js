@@ -80,7 +80,7 @@ $(function () {
                 },
                 {
                     name:'Setembro',
-                    y:2,
+                    y:0,
                     drilldown:'setembro'
                 },
                 {

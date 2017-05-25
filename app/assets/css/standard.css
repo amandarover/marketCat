@@ -31,3 +31,7 @@ a:hover {
 .container {
   padding-bottom: 5px;
 }
+#imagem-produto {
+  width: 90px;
+  height: 70px;
+}
