@@ -33,11 +33,11 @@
       </div>
       <div class="modal-body">
 
-        <form action="#" method="post" name="formNewProduct" id="formNewProduct" onSubmit="return formValidate(this);">
+        <form id="formNewProduct" data-toggle="validator" role="form" onsubmit="formValidate (this)">
           <div class="form-group row">
             <label for="new-product-name" class="col-2 col-form-label">Imagem</label>
             <div class="col-10">
-              <!-- <input class="form-control required" type="text" name="Nome" placeholder="Nome do produto" id="new-product-name"> -->
+              <input id="new-product-image" type="file" name="Imagem" class="file required">
             </div>
           </div>
           <div class="form-group row">
@@ -82,34 +82,27 @@
               <input class="form-control required" type="date" name="Data de validade" value="12-06-2017" id="new-product-expiration-date">
             </div> <!-- validaçao de data mínima min="26-05-2017" -->
           </div>
-          <!-- <label for="example-datetime-local-input" class="col-2 col-form-label">Este produto tem promoção?</label> -->
 
+          <!-- PROMOÇÃO -->
           <div class="checkbox">
-            <label><input type="checkbox" value="" onclick="toggleSale()">Este produto tem promoção?</label>
+            <label><input id="checkbox-sale" type="checkbox" value="" onclick="toggleSale()">Este produto tem promoção?</label>
           </div>
-
-          <!-- <label class="radio-inline">
-            <input type="radio" name="optradio" onclick="toggleSale(false)" checked="checked">Não
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio" onclick="toggleSale(true)">Sim
-          </label> -->
           <div class="form-group row" id="saleFieldDate" style="display:none;">
             <label for="example-datetime-local-input" class="col-2 col-form-label">Data final da promoção</label>
             <div class="col-10">
-              <input class="form-control required" type="date" name="Data de validade" value="12-06-2017" id="new-product-expiration-date-sale">
+              <input class="form-control required-sale" type="date" name="Data final da promoção" value="12-06-2017" id="new-product-expiration-date-sale">
             </div> <!-- validaçao de data mínima min="26-05-2017" -->
           </div>
           <div class="form-group row" id="saleFieldPercent" style="display:none;">
             <label for="example-tel-input" class="col-2 col-form-label">Porcentagem da promoção</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" name="Valor por unidade" placeholder="0" id="new-product-price">
+              <input class="form-control required-sale" type="number" min="0" name="Porcentagem da promoção" placeholder="0" id="new-product-price">
             </div> <!-- inputgroup com % -->
           </div>
           <div class="form-group row" id="saleFieldUnit" style="display:none;">
             <label for="example-tel-input" class="col-2 col-form-label">Unidade de produto mínima para essa promoção</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" name="Valor por unidade" placeholder="0" id="new-product-price">
+              <input class="form-control required-sale" type="number" min="0" name="Unidade de produto mínima para essa promoção" placeholder="0" id="new-product-price">
             </div>
           </div>
 
@@ -126,18 +119,29 @@
 
 <script>
 function formValidate (form) {
-  inputs = document.getElementsByClassName("required");
-	var mensagemValidate = "";
-
-  for(var i = 0; i < inputs.length; i++){
-    if (inputs[i].value == "")	{
-      mensagemValidate += "O campo " + inputs[i].name +" é obrigatório\n";
-    }
-  }
-  if (mensagemValidate!=""){
-    alert(mensagemValidate);
-    return false;
-  }
+  $('#formNewProduct').validator()
+  // inputs = document.getElementsByClassName("required");
+	// var mensagemValidate = "";
+  //
+  // for(var i = 0; i < inputs.length; i++){
+  //   if (inputs[i].value == "")	{
+  //     mensagemValidate += "O campo " + inputs[i].name +" é obrigatório\n";
+  //   }
+  // }
+  // if ($("#checkbox-sale") == true) {
+  //   inputsSale = document.getElementsByClassName("required-sale");
+  //   var mensagemValidateSale = "";
+  //
+  //   for(var i = 0; i < inputsSale.length; i++){
+  //     if (inputsSale[i].value == "")	{
+  //       mensagemValidateSale += "O campo " + inputsSale[i].name +" é obrigatório\n";
+  //     }
+  //   }
+  // }
+  // if (mensagemValidate != "" || mensagemValidateSale != ""){
+  //   alert(mensagemValidate + "\n" + mensagemValidateSale);
+  //   return false;
+  // }
 }
 
 function toggleSale (radioAnswer) {
