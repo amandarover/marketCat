@@ -102,7 +102,7 @@
   							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 						<br><br>
-						<button type="button" class="btn btn-default btn-xs btn btn-danger"  > Excluir
+						<button type="button" class="btn btn-default btn-xs btn btn-danger"  onclick="confirmacao()"> Excluir
   							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</td>
@@ -118,7 +118,7 @@
   							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 						<br><br>
-						<button type="button" class="btn btn-default btn-xs btn btn-danger"> Excluir
+						<button type="button" class="btn btn-default btn-xs btn btn-danger" onclick="confirmacao()"> Excluir
   							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</td>					
@@ -134,7 +134,7 @@
   							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 						<br><br>
-						<button type="button" class="btn btn-default btn-xs btn btn-danger"> Excluir
+						<button type="button" class="btn btn-default btn-xs btn btn-danger" onclick="confirmacao()"> Excluir
   							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</td>					
@@ -168,6 +168,12 @@ $(document).ready(
 );
 function cleanModal () {
   $('#new-product-amount',).val("");
+}
+</script>
+
+<script>
+function confirmacao() {
+    confirm("Deseja Apagar?");
 }
 </script>
 
