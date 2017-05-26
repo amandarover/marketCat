@@ -51,7 +51,7 @@
 							<label for="example-tel-input" class="col-2 col-form-label">Valor por unidade</label>
 								<div class="input-group">
 									<span class="input-group-addon">$</span>
-									<input class="form-control required" type="number" min="0"  name="Valor por unidade" placeholder="0,00" id="new-product-price">
+									<input class="form-control required" type="number" min="0"  name="Valor por unidade" placeholder="0,00" disabled="true" id="new-product-price">
 								</div>
 								<div class="help-block with-errors"></div>
 	            </div>
@@ -158,18 +158,7 @@
 		</div>
 	</div>
 
-<script>
-$(document).ready(
-  function(){
-    $('#newSaleModal').on('hidden.bs.modal', function () {
-      cleanModal();
-    });
-  }
-);
-function cleanModal () {
-  $('#new-product-amount',).val("");
-}
-</script>
+
 
 <script>
 function confirmacao() {
