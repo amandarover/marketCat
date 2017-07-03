@@ -16,7 +16,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="login.html" text-align="center">MarketCat</a>
+                <a class="navbar-brand" href="login.jsp" text-align="center">MarketCat</a>
             </div>
         </div>
         <div class="container-fluid">
@@ -34,7 +34,7 @@
                             <h3 class="panel-title">Tela de Login</h3>
                     </div>
                     <div class="panel-body">
-                        <form accept-charset="UTF-8" data-toggle="validator" role="form" action="products.html">
+                        <form accept-charset="UTF-8" data-toggle="validator" role="form" action="products.jsp">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Usuário" name="usuario" type="text" data-error="Insira um usuário" required>
