@@ -1,7 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
 public class Product {
     private long idProduct;
     private String image;
@@ -10,5 +8,6 @@ public class Product {
     private String unitOfMeasure;
     private double pricePerUnit;
     private double minimunStock;
-    private ArrayList<ProductStock> productStock; 
+    private String validateDate;
+    private double stock;
 }
