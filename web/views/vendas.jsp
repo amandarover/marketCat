@@ -28,11 +28,11 @@
 	      </div>
 	      <div class="modal-body">
 
-	        <form id="formNewProduct" data-toggle="validator" role="form">
+	        <form id="formNewProduct" data-toggle="validator" method="post" action = "${pageContext.request.contextPath}/ControllerSale" role="form">
 	          <div class="form-group row">
 	            <div class="col-10">
 					      <label for="sel1">Nome</label>
-					      <select class="form-control" id="sel1">
+					      <select class="form-control" id="sel1" name="Nome">
 					        <option>Feijão</option>
 					        <option>Alface</option>
 					        <option>Couve</option>
@@ -42,7 +42,7 @@
 	          <div class="form-group row">
 	            <label for="example-email-input" class="col-2 col-form-label">Quantidade</label>
 	            <div class="col-10">
-	              <input class="form-control required" type="number" min="0" name="Quantidade do produto" placeholder="0" id="new-product-amount" data-error="Informe a quantidade" required>
+	              <input class="form-control required" type="number" min="0" name="QuantidadeProduto" placeholder="0" id="new-product-amount" data-error="Informe a quantidade" required>
 	              <div class="help-block with-errors"></div>
 	            </div>
 	          </div>
@@ -51,7 +51,7 @@
 							<label for="example-tel-input" class="col-2 col-form-label">Valor por unidade</label>
 								<div class="input-group">
 									<span class="input-group-addon">$</span>
-									<input class="form-control required" type="number" min="0"  name="Valor por unidade" placeholder="0,00" disabled="true" id="new-product-price">
+									<input class="form-control required" type="number" min="0"  name="ValorUnidade" placeholder="0,00" disabled="true" id="new-product-price">
 								</div>
 								<div class="help-block with-errors"></div>
 	            </div>
