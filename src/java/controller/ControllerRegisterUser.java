@@ -31,6 +31,14 @@ public class ControllerRegisterUser extends HttpServlet {
         System.out.println("Login: " + login);
         System.out.println("Password: " + password);
         System.out.println("Perfil: "+ radio);
+        
+        if("Gerencia".equals(radio)){
+            //TODO
+        }else{
+            if("Caixa".equals(radio)){
+                //TODO
+            }
+        }
 
         response.sendRedirect("/marketCat/faces/views/cadastrousuario.jsp");
     }
