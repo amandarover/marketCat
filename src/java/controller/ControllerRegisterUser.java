@@ -19,15 +19,17 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ControllerRegisterUser")
 public class ControllerRegisterUser extends HttpServlet {
 
-    public void test(HttpServletRequest request,
+    public void getParameters(HttpServletRequest request,
             HttpServletResponse response) throws IOException {
         String name = request.getParameter("Nome");
         String login = request.getParameter("Login");
         String password = request.getParameter("Senha");
+        String radio = request.getParameter("optradio");
 
         System.out.println("Nome: " + name);
         System.out.println("Login: " + login);
         System.out.println("Password: " + password);
+        System.out.println("Perfil: "+ radio);
 
         response.sendRedirect("/marketCat/faces/views/cadastrousuario.jsp");
     }
@@ -40,7 +42,7 @@ public class ControllerRegisterUser extends HttpServlet {
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
-        test(request, response);
+        getParameters(request, response);
 
     }
 

@@ -120,10 +120,10 @@
 								<div class="col-10">
 									<label for="new-product-name" class="col-2 col-form-label">Perfil</label>
 									<div class="radio">
-										<label><input type="radio" name="optradio">Gerência</label>
+										<label><input type="radio" name="optradio" value ="Gerencia">Gerência</label>
 									</div>
 									<div class="radio">
-										<label><input type="radio" name="optradio">Caixa</label>
+										<label><input type="radio" name="optradio" value = Caixa>Caixa</label>
 									</div>
 								</div>
 							</div>
