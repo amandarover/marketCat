@@ -2,7 +2,7 @@ package models;
 
 public class Product {
     private long idProduct;
-    private String image;
+    private String imageUrl;
     private String name;
     private String description;
     private String unitOfMeasure;
