@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.User;
 
 
 /*
@@ -32,11 +33,16 @@ public class ControllerRegisterUser extends HttpServlet {
         System.out.println("Password: " + password);
         System.out.println("Perfil: "+ radio);
         
+        User user = new User();
+        
+        //user.g
         if("Gerencia".equals(radio)){
             //TODO
         }else{
             if("Caixa".equals(radio)){
                 //TODO
+            }else{
+                
             }
         }
 
