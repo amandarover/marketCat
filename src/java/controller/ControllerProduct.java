@@ -12,19 +12,22 @@ public class ControllerProduct extends HttpServlet {
 
     public void getParameters(HttpServletRequest request,
             HttpServletResponse response) throws IOException {
-        
-        String name = request.getParameter("Nome");
-        String description = request.getParameter("Login");
-        String quantity = request.getParameter("Senha");
-        String unit = request.getParameter("optradio");
-        String minStock = request.getParameter("optradio");
-        String unitPrice = request.getParameter("optradio");
-        String validity = request.getParameter("optradio");
 
-        //System.out.println("Nome: " + name);
-        //System.out.println("Login: " + login);
-        // System.out.println("Password: " + password);
-        // System.out.println("Perfil: " + radio);
+        String name = request.getParameter("Nome");
+        String description = request.getParameter("Descricao");
+        String quantity = request.getParameter("QuantidadeProduto");
+        String unit = request.getParameter("UnidadeMedida");
+        String minStock = request.getParameter("QuantidadeMinEstoque");
+        String unitPrice = request.getParameter("ValorUnidade");
+        String validity = request.getParameter("DataValidade");
+
+        System.out.println("Nome: " + name);
+        System.out.println("Descricao: " + description);
+        System.out.println("Quantidade: " + quantity);
+        System.out.println("Unidade: " + unit);
+        System.out.println("Estoque Minimo: " + minStock);
+        System.out.println("Preco unitario: " + unitPrice);
+        System.out.println("Validade: " + validity);
         response.sendRedirect("/marketCat/faces/views/products.jsp");
     }
 
@@ -35,6 +38,6 @@ public class ControllerProduct extends HttpServlet {
 
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        //getParameters(request, response);
+        getParameters(request, response);
     }
 }

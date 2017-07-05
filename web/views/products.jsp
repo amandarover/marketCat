@@ -49,28 +49,28 @@
           <div class="form-group row">
             <label for="example-search-input" class="col-2 col-form-label">Descrição</label>
             <div class="col-10">
-              <input class="form-control required" type="text" name="Descrição" placeholder="Breve descrição do produto" id="new-product-description" data-error="Informe a descrição" required>
+              <input class="form-control required" type="text" name="Descricao" placeholder="Breve descrição do produto" id="new-product-description" data-error="Informe a descrição" required>
               <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-email-input" class="col-2 col-form-label">Quantidade do produto</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" name="Quantidade do produto" placeholder="0" id="new-product-amount" data-error="Informe a quantidade" required>
+              <input class="form-control required" type="number" min="0" name="QuantidadeProduto" placeholder="0" id="new-product-amount" data-error="Informe a quantidade" required>
               <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-url-input" class="col-2 col-form-label">Unidade de medida</label>
             <div class="col-10">
-              <input class="form-control required" type="text" name="Unidade de medida" placeholder="litros, gramas" id="new-product-measurement" data-error="Informe a unidade de medida" required>
+              <input class="form-control required" type="text" name="UnidadeMedida" placeholder="litros, gramas" id="new-product-measurement" data-error="Informe a unidade de medida" required>
               <div class="help-block with-errors"></div>
             </div>
           </div>
           <div class="form-group row">
             <label for="example-number-input" class="col-2 col-form-label">Quantidade mínima do estoque</label>
             <div class="col-10">
-              <input class="form-control required" type="number" min="0" step="1" name="Quantidade mínima do estoque" placeholder="0" id="new-product-min-amount" data-error="Informe a quantidade mínima de estoque" required>
+              <input class="form-control required" type="number" min="0" step="1" name="QuantidadeMinEstoque" placeholder="0" id="new-product-min-amount" data-error="Informe a quantidade mínima de estoque" required>
               <div class="help-block with-errors"></div>
             </div>
           </div>
@@ -79,7 +79,7 @@
             <div class="col-10">
               <div class="input-group">
                 <span class="input-group-addon">$</span>
-                <input class="form-control" type="number" min="0" name="Valor por unidade" placeholder="0" id="new-product-price" data-error="Informe a valor por unidade" required>
+                <input class="form-control" type="number" min="0" name="ValorUnidade" placeholder="0" id="new-product-price" data-error="Informe a valor por unidade" required>
               </div>
                 <div class="help-block with-errors"></div>
             </div>
@@ -87,7 +87,7 @@
           <div class="form-group row">
             <label for="example-datetime-local-input" class="col-2 col-form-label">Data de validade</label>
             <div class="col-10">
-              <input class="form-control required" type="date" name="Data de validade" value="12-06-2017" id="new-product-expiration-date" data-error="Informe a data de validade" required>
+              <input class="form-control required" type="date" name="DataValidade" value="12-06-2017" id="new-product-expiration-date" data-error="Informe a data de validade" required>
               <div class="help-block with-errors"></div>
             </div> <!-- validaçao de data mínima min="26-05-2017" -->
           </div>
