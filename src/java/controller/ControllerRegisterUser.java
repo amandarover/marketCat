@@ -1,5 +1,5 @@
 package controller;
-        
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,18 +31,24 @@ public class ControllerRegisterUser extends HttpServlet {
         System.out.println("Nome: " + name);
         System.out.println("Login: " + login);
         System.out.println("Password: " + password);
-        System.out.println("Perfil: "+ radio);
-        
+        System.out.println("Perfil: " + radio);
+
         User user = new User();
-        
+
         //user.g
-        if("Gerencia".equals(radio)){
+        if ("Gerencia".equals(radio)) {
             //TODO
-        }else{
-            if("Caixa".equals(radio)){
+            user.setName(name);
+            user.setPassword(password);
+            user.setUsername(login);
+        } else {
+            if ("Caixa".equals(radio)) {
                 //TODO
-            }else{
-                
+                user.setName(name);
+                user.setPassword(password);
+                user.setUsername(login);
+            } else {
+
             }
         }
 

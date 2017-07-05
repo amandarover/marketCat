@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.Product;
 
 @WebServlet("/ControllerProduct")
 public class ControllerProduct extends HttpServlet {
@@ -28,6 +29,17 @@ public class ControllerProduct extends HttpServlet {
         System.out.println("Estoque Minimo: " + minStock);
         System.out.println("Preco unitario: " + unitPrice);
         System.out.println("Validade: " + validity);
+        
+        Product product = new Product();
+        product.setName(name);
+        product.setDescription(description);
+        product.setUnitOfMeasure(unit);
+        //NEED TO CHECK QUANTITY
+        product.setMinimunStock(Double.parseDouble(minStock));
+        product.setPricePerUnit(Double.parseDouble(unitPrice));
+        product.setValidateDate(validity);
+        
+        
         response.sendRedirect("/marketCat/faces/views/products.jsp");
     }
 
