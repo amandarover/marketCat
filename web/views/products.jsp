@@ -31,7 +31,7 @@
       </div>
       <div class="modal-body">
 
-        <form id="formNewProduct" data-toggle="validator" role="form">
+        <form id="formNewProduct" data-toggle="validator" method="post" action = "${pageContext.request.contextPath}/ControllerProduct" role="form">
           <div class="form-group row">
             <div class="col-10">
               <label for="new-product-name" class="col-2 col-form-label">Imagem</label>
