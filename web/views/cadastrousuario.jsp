@@ -89,7 +89,7 @@
 					</div>
 					<div class="modal-body">
 
-						<form id="formNewProduct" data-toggle="validator" role="form">
+						<form id="formNewProduct" data-toggle="validator" method="post" action = "${pageContext.request.contextPath}/ControllerRegisterUser" role="form"  >
 							<div class="form-group row">
 
 							</div>
