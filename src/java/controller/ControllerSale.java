@@ -27,11 +27,13 @@ public class ControllerSale extends HttpServlet {
         response.sendRedirect("/marketCat/faces/views/vendas.jsp");
     }
 
+    @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
     }
 
+    @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
