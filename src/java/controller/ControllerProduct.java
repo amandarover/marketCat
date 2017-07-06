@@ -37,7 +37,7 @@ public class ControllerProduct extends HttpServlet {
         //NEED TO CHECK QUANTITY
         product.setMinimunStock(Double.parseDouble(minStock));
         product.setPricePerUnit(Double.parseDouble(unitPrice));
-        product.setValidateDate(validity);
+       // product.setValidateDate(validity);
         
         
         response.sendRedirect("/marketCat/faces/views/products.jsp");
