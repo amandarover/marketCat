@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.Date;
+
 public class Product {
     private long idProduct;
     private String imageUrl;
@@ -8,7 +10,7 @@ public class Product {
     private String unitOfMeasure;
     private double pricePerUnit;
     private double minimunStock;
-    private String validateDate;
+    private Date validateDate;
     private double stock;
 
     public long getIdProduct() {
@@ -67,11 +69,11 @@ public class Product {
         this.minimunStock = minimunStock;
     }
 
-    public String getValidateDate() {
+    public Date getValidateDate() {
         return validateDate;
     }
 
-    public void setValidateDate(String validateDate) {
+    public void setValidateDate(Date validateDate) {
         this.validateDate = validateDate;
     }
 
