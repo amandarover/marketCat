@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import models.Product;
 
 public class ProductDB {
@@ -34,7 +33,6 @@ public class ProductDB {
             }
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro no insertProduct \n " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -69,7 +67,6 @@ public class ProductDB {
                 System.out.println("A new user was updated successfully!");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro no updateProduct \n " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -86,7 +83,6 @@ public class ProductDB {
                 System.out.println("A new user was deleted successfully!");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro no deleteProduct \n " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -109,7 +105,6 @@ public class ProductDB {
             //termina a amostragem
             
         } catch (Exception e ) {
-            JOptionPane.showMessageDialog(null, "Erro no selectAllProduct \n " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -135,7 +130,6 @@ public class ProductDB {
             return product;
             
         } catch (Exception e ) {
-            JOptionPane.showMessageDialog(null, "Erro no selectAllProduct \n " + e.getMessage());
             e.printStackTrace();
         }
     }    
