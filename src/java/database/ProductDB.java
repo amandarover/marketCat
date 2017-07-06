@@ -29,7 +29,7 @@ public class ProductDB {
             
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
-                System.out.println("A new user was inserted successfully!");
+                System.out.println("A new product was inserted successfully!");
             }
             
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class ProductDB {
             int rowsUpdated = statement.executeUpdate();
             
             if (rowsUpdated > 0) {
-                System.out.println("A new user was updated successfully!");
+                System.out.println("A new product was updated successfully!");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ public class ProductDB {
     }
     
     public void deleteProduct(int idProduct) {
-        String deleteString = "DELETE FROM Pessoa WHERE idProduct = ?";
+        String deleteString = "DELETE FROM products WHERE idProduct = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
             statement.setInt(1, idProduct);
@@ -80,7 +80,7 @@ public class ProductDB {
             int rowsDeleted = statement.executeUpdate();
 
             if (rowsDeleted > 0) {
-                System.out.println("A new user was deleted successfully!");
+                System.out.println("A new product was deleted successfully!");
             }
         } catch (Exception e) {
             e.printStackTrace();
