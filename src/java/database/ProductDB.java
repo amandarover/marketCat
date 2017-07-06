@@ -1,9 +1,8 @@
 package database;
 
-import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import models.Product;
 
 public class ProductDB {
@@ -22,7 +21,7 @@ public class ProductDB {
             statement.setString(4, product.getUnitOfMeasure());
             statement.setDouble(5, product.getPricePerUnit());
             statement.setDouble(6, product.getMinimunStock());
-            statement.setDate(7, product.getValidateDate());
+            statement.setDate(7, (Date) product.getValidateDate());
             statement.setDouble(8, product.getStock());
             
             statement.execute();
@@ -57,11 +56,11 @@ public class ProductDB {
             statement.setString(4, product.getUnitOfMeasure());
             statement.setDouble(5, product.getPricePerUnit());
             statement.setDouble(6, product.getMinimunStock());
-            statement.setDate(7, product.getValidateDate());
+            statement.setDate(7, (Date) product.getValidateDate());
             statement.setDouble(8, product.getStock());
-            //preparestatement para chave primaria
+            statement.setInt(9, (int) product.getIdProduct());
+            
             int rowsUpdated = statement.executeUpdate();
-            //javautildate para javasqldate
             
             if (rowsUpdated > 0) {
                 System.out.println("A new user was updated successfully!");
@@ -131,6 +130,7 @@ public class ProductDB {
             
         } catch (Exception e ) {
             e.printStackTrace();
+            return null;
         }
-    }    
+    }
 }
