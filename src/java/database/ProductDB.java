@@ -9,7 +9,7 @@ import models.Product;
 
 public class ProductDB {
 
-    public void insertProduct(Product product) throws SQLException {
+    public void insertProduct(Product product) {
 
         String insertString =
             "INSERT INTO schema_cat.PRODUCTS " +
@@ -26,7 +26,7 @@ public class ProductDB {
             statement.setDate(7, product.getValidateDate());
             statement.setDouble(8, product.getStock());
             
-            statement.execute(insertString);
+            statement.execute();
             
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -39,7 +39,7 @@ public class ProductDB {
         }
     }
     
-    public void updateProduct(Product product) throws SQLException {
+    public void updateProduct(Product product) {
         String updateString =
             "UPDATE schema_cat.PRODUCTS " +
             "SET imageUrl = ? and " +
@@ -62,7 +62,7 @@ public class ProductDB {
             statement.setDate(7, product.getValidateDate());
             statement.setDouble(8, product.getStock());
             //preparestatement para chave primaria
-            int rowsUpdated = statement.executeUpdate(updateString);
+            int rowsUpdated = statement.executeUpdate();
             //javautildate para javasqldate
             
             if (rowsUpdated > 0) {
@@ -74,13 +74,13 @@ public class ProductDB {
         }
     }
     
-    public void deleteProduct(int idProduct) throws SQLException {
+    public void deleteProduct(int idProduct) {
         String deleteString = "DELETE FROM Pessoa WHERE idProducts = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
             statement.setInt(1, idProduct);
 
-            int rowsDeleted = statement.executeUpdate(deleteString);
+            int rowsDeleted = statement.executeUpdate();
 
             if (rowsDeleted > 0) {
                 System.out.println("A new user was deleted successfully!");
@@ -91,11 +91,11 @@ public class ProductDB {
         }
     }
     
-    public void selectAllProducts() throws SQLException {
+    public void selectAllProducts() {
         String deleteString = "SELECT * FROM products";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
-            ResultSet result = statement.executeQuery(deleteString);
+            ResultSet result = statement.executeQuery();
             //mostra por output os valores das tabelas para verificaçao se deu certo o/
             int count = 0;
 
@@ -114,7 +114,6 @@ public class ProductDB {
         }
     }
     
-    public void selectProduct(int idProduct) throws SQLException {
         String selectString = "SELECT * FROM products WHERE idProducts = ? ";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(selectString)){
