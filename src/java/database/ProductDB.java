@@ -114,17 +114,25 @@ public class ProductDB {
         }
     }
     
+    public Product selectProduct(int idProduct) {
         String selectString = "SELECT * FROM products WHERE idProducts = ? ";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(selectString)){
             statement.setInt(1, idProduct);
-            ResultSet result = statement.executeQuery(selectString);
-            
-            String name = result.getString("name");
-            double pricePerUnit = result.getDouble("pricePerUnit");
-            double validateDate = result.getDouble("validateDate");
-            String output = "Product: %s - %d - %t";
-            System.out.println(String.format(output, name, pricePerUnit, validateDate));
+            ResultSet result = statement.executeQuery();
+            Product product = null;
+            while(result.next()) {
+                product = new Product();
+                product.setImageUrl(result.getString("imageUrl"));
+                product.setName(result.getString("name"));
+                product.setDescription(result.getString("description"));
+                product.setUnitOfMeasure(result.getString("unitOfMeasure"));
+                product.setPricePerUnit(result.getDouble("pricePerUnit"));
+                product.setMinimunStock(result.getDouble("minimunStock"));
+                product.setValidateDate(result.getDate("validateDate"));
+                product.setStock(result.getDouble("stock"));
+            }
+            return product;
             
         } catch (Exception e ) {
             JOptionPane.showMessageDialog(null, "Erro no selectAllProduct \n " + e.getMessage());
