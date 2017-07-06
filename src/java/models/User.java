@@ -1,9 +1,8 @@
 package models;
 
 public class User {
-    enum UserType {
-        ADMIN, MANAGER, CASHIER
-    }
+
+    private String userType;
     private long idUser;
     private String name;
     private String username;
@@ -15,6 +14,14 @@ public class User {
 
     public void setIdUser(long idUser) {
         this.idUser = idUser;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public String getName() {
