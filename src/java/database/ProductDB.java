@@ -48,7 +48,7 @@ public class ProductDB {
             "SET minimunStock = ? and " +
             "SET validateDate = ? and " +
             "SET stock = ? and " +
-            "WHERE idProducts = ?";
+            "WHERE idProduct = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(updateString)){
             statement.setString(1, product.getImageUrl());
@@ -72,7 +72,7 @@ public class ProductDB {
     }
     
     public void deleteProduct(int idProduct) {
-        String deleteString = "DELETE FROM Pessoa WHERE idProducts = ?";
+        String deleteString = "DELETE FROM Pessoa WHERE idProduct = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
             statement.setInt(1, idProduct);
@@ -95,6 +95,7 @@ public class ProductDB {
             Product product;
             while(result.next()) {
                 product = new Product();
+                product.setIdProduct(result.getInt("idProduct"));
                 product.setImageUrl(result.getString("imageUrl"));
                 product.setName(result.getString("name"));
                 product.setDescription(result.getString("description"));
@@ -113,7 +114,7 @@ public class ProductDB {
     }
     
     public Product selectProduct(int idProduct) {
-        String selectString = "SELECT * FROM products WHERE idProducts = ? ";
+        String selectString = "SELECT * FROM products WHERE idProduct = ? ";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(selectString)){
             statement.setInt(1, idProduct);
@@ -121,6 +122,7 @@ public class ProductDB {
             Product product = null;
             while(result.next()) {
                 product = new Product();
+                product.setIdProduct(result.getInt("idProduct"));
                 product.setImageUrl(result.getString("imageUrl"));
                 product.setName(result.getString("name"));
                 product.setDescription(result.getString("description"));
