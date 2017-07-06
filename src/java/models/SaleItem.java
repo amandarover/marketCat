@@ -1,10 +1,17 @@
 package models;
 
 public class SaleItem {
+    private long idSaleItem;
     private int quantity;
-    private Product product;
-    private double total;
-    
+    private Product product;    
+
+    public long getIdSaleItem() {
+        return idSaleItem;
+    }
+
+    public void setIdSaleItem(long idSaleItem) {
+        this.idSaleItem = idSaleItem;
+    }
 
     public int getQuantity() {
         return quantity;
@@ -20,13 +27,5 @@ public class SaleItem {
 
     public void setProduct(Product product) {
         this.product = product;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
     }
 }
