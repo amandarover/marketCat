@@ -3,6 +3,7 @@ package database;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import models.Product;
 
 public class ProductDB {
@@ -86,25 +87,28 @@ public class ProductDB {
         }
     }
     
-    public void selectAllProducts() {
+    public ArrayList<Product> selectAllProducts() {
         String deleteString = "SELECT * FROM products";
-
+        ArrayList<Product> productsList = new ArrayList<>();
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
             ResultSet result = statement.executeQuery();
-            //mostra por output os valores das tabelas para verificaçao se deu certo o/
-            int count = 0;
-
-            while (result.next()){
-                String name = result.getString("name");
-                double pricePerUnit = result.getDouble("pricePerUnit");
-                double validateDate = result.getDouble("validateDate");
-                String output = "Product #%d: %s - %d - %t";
-                System.out.println(String.format(output, ++count, name, pricePerUnit, validateDate));
+            Product product;
+            while(result.next()) {
+                product = new Product();
+                product.setImageUrl(result.getString("imageUrl"));
+                product.setName(result.getString("name"));
+                product.setDescription(result.getString("description"));
+                product.setUnitOfMeasure(result.getString("unitOfMeasure"));
+                product.setPricePerUnit(result.getDouble("pricePerUnit"));
+                product.setMinimunStock(result.getDouble("minimunStock"));
+                product.setValidateDate(result.getDate("validateDate"));
+                product.setStock(result.getDouble("stock"));
+                productsList.add(product);
             }
-            //termina a amostragem
-            
+            return productsList;
         } catch (Exception e ) {
             e.printStackTrace();
+            return null;
         }
     }
     
