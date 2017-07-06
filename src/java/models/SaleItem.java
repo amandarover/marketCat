@@ -13,7 +13,7 @@ public class SaleItem {
     private int quantity;
     private Product product;
     private double total;
-    String url;
+    
 
     public int getQuantity() {
         return quantity;
@@ -39,13 +39,6 @@ public class SaleItem {
         this.total = total;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
     
     
 }
