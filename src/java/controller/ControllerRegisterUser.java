@@ -26,6 +26,7 @@ public class ControllerRegisterUser extends HttpServlet {
 
     public void getParameters(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException {
+
         String name = request.getParameter("Nome");
         String login = request.getParameter("Login");
         String password = request.getParameter("Senha");
@@ -40,7 +41,7 @@ public class ControllerRegisterUser extends HttpServlet {
 
         UserDB userdb = new UserDB();
         if ("Gerencia".equals(radio)) {
-            
+
             user.setName(name);
             user.setPassword(password);
             user.setUsername(login);
@@ -56,12 +57,11 @@ public class ControllerRegisterUser extends HttpServlet {
             }
         }
 
-        
         ArrayList users = userdb.selectAllUsers();
         request.setAttribute("users", user);
         RequestDispatcher mandar = request.getRequestDispatcher("cadastrousuario.jsp");
         mandar.forward(request, response);
-       
+
     }
 
     protected void doGet(HttpServletRequest request,

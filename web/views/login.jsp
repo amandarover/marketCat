@@ -37,7 +37,7 @@
                         <form accept-charset="UTF-8" data-toggle="validator" role="form" action="products.jsp">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Usuário" name="usuario" type="text" data-error="Insira um usuário" required>
+                                    <input class="form-control" placeholder="Usu�rio" name="usuario" type="text" data-error="Insira um usuário" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group">
