@@ -61,8 +61,8 @@ public class Product {
 
     public double getPricePerUnit() {
         if (this.isCloseout() == true) {
-            double percentagePaid = (this.getPercentageCloseout()*100) - 100; //inserir no campo porcentagem apenas 0,1 -> referente a 10%
-            double amountPaid = percentagePaid * this.getPricePerUnit(); //tratar para virar positivo
+            double percentagePaid = (this.getPercentageCloseout()*100) - 100;
+            double amountPaid = percentagePaid * this.getPricePerUnit();
                 return amountPaid;
         } else {
             return pricePerUnit;

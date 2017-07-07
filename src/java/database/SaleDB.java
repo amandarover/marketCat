@@ -39,6 +39,7 @@ public class SaleDB {
                     con.close();
                 }
             } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
