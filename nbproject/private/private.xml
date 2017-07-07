@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/rover_000/Documents/Unisul/marketCat/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/rover_000/Documents/Unisul/marketCat/web/views/login.jsp</file>
-            <file>file:/C:/Users/rover_000/Documents/Unisul/marketCat/web/example.xhtml</file>
-            <file>file:/C:/Users/rover_000/Documents/Unisul/marketCat/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/controller/ControllerSale.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/models/Sale.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/models/User.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/controller/ControllerProduct.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/models/SaleItem.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/web/views/graph.jsp</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/controller/ControllerRegisterUser.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/controller/ControllerGraphTable.java</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/web/views/cadastrousuario.jsp</file>
+            <file>file:/C:/Users/hirob/Documents/GitHub/marketCat/src/java/models/Product.java</file>
         </group>
     </open-files>
 </project-private>
