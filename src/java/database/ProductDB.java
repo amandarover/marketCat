@@ -12,8 +12,9 @@ public class ProductDB {
 
         String insertString =
             "INSERT INTO schema_cat.PRODUCTS " +
-            "(imageUrl, name, description, unitOfMeasure, pricePerUnit, minimunStock, validateDate, stock)" +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            "(imageUrl, name, description, unitOfMeasure, pricePerUnit, minimunStock, validateDate," + 
+            "stock, isCloseout, expirationDateCloseout, minimunCloseout, percentageCloseout)" +
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(insertString)){
             statement.setString(1, product.getImageUrl());
@@ -24,6 +25,10 @@ public class ProductDB {
             statement.setDouble(6, product.getMinimunStock());
             statement.setDate(7, (Date) product.getValidateDate());
             statement.setDouble(8, product.getStock());
+            statement.setBoolean(9, product.isCloseout());
+            statement.setDate(10, (Date) product.getExpirationDateCloseout());
+            statement.setDouble(11, product.getMinimunCloseout());
+            statement.setDouble(12, product.getPercentageCloseout());
             
             statement.execute();
             
@@ -48,6 +53,10 @@ public class ProductDB {
             "SET minimunStock = ? and " +
             "SET validateDate = ? and " +
             "SET stock = ? and " +
+            "SET isCloseout = ? and " +
+            "SET expirationDateCloseout = ? and " +
+            "SET minimunCloseout = ? and " +
+            "SET percentageCloseout = ? and " +
             "WHERE idProduct = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(updateString)){
@@ -60,6 +69,9 @@ public class ProductDB {
             statement.setDate(7, (Date) product.getValidateDate());
             statement.setDouble(8, product.getStock());
             statement.setInt(9, (int) product.getIdProduct());
+            statement.setDate(10, (Date) product.getExpirationDateCloseout());
+            statement.setDouble(11, product.getMinimunCloseout());
+            statement.setDouble(12, product.getPercentageCloseout());
             
             int rowsUpdated = statement.executeUpdate();
             
@@ -104,6 +116,10 @@ public class ProductDB {
                 product.setMinimunStock(result.getDouble("minimunStock"));
                 product.setValidateDate(result.getDate("validateDate"));
                 product.setStock(result.getDouble("stock"));
+                product.setCloseout(result.getBoolean("isCloseout"));
+                product.setExpirationDateCloseout(result.getDate("expirationDateCloseout"));
+                product.setMinimunCloseout(result.getDouble("minimunCloseout"));
+                product.setPercentageCloseout(result.getDouble("percentageCloseout"));
                 productsList.add(product);
             }
             return productsList;
@@ -131,6 +147,10 @@ public class ProductDB {
                 product.setMinimunStock(result.getDouble("minimunStock"));
                 product.setValidateDate(result.getDate("validateDate"));
                 product.setStock(result.getDouble("stock"));
+                product.setCloseout(result.getBoolean("isCloseout"));
+                product.setExpirationDateCloseout(result.getDate("expirationDateCloseout"));
+                product.setMinimunCloseout(result.getDouble("minimunCloseout"));
+                product.setPercentageCloseout(result.getDouble("percentageCloseout"));
             }
             return product;
             
