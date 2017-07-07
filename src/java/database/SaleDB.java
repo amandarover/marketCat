@@ -25,16 +25,6 @@ public class SaleDB {
                 statement.setDouble(4, sale.getTotalSale());
                 statement.setDate(5, (Date) sale.getSaleDate());
                 statement.setString(6, sale.getCpfCustomer());
-                
-//                Tratar o calculo de porcentagem no sistema (aqui só deve ficar o resultado da venda)
-//                if (item.getProduct().isCloseout() == true) {
-//                    
-//                    double percentagePaid = (item.getProduct().getPercentageCloseout()*100) - 100; //inserir no campo porcentagem apenas 0,1 -> referente a 10%
-//                    double amountPaid = percentagePaid * item.getProduct().getPricePerUnit(); //tratar para virar positivo
-//                    statement.setDouble(5, amountPaid);
-//                } else {
-//                    ps.setDouble(5, item.getValorUnidade());
-//                }
 
                 statement.execute();
             }
