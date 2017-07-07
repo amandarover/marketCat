@@ -120,4 +120,11 @@ public class Product {
     public void setPercentageCloseout(double percentageCloseout) {
         this.percentageCloseout = percentageCloseout;
     } 
+
+    
+    
+    //CRIAR ALGO PARA TRANSFORMAR STRING EM DATE
+    public void setExpirationDateCloseout(String expirationDateClouseout) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -1,6 +1,9 @@
 package controller;
 
+import database.UserDB;
 import java.io.IOException;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +25,7 @@ import models.User;
 public class ControllerRegisterUser extends HttpServlet {
 
     public void getParameters(HttpServletRequest request,
-            HttpServletResponse response) throws IOException {
+            HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("Nome");
         String login = request.getParameter("Login");
         String password = request.getParameter("Senha");
@@ -35,24 +38,30 @@ public class ControllerRegisterUser extends HttpServlet {
 
         User user = new User();
 
-        //user.g
+        UserDB userdb = new UserDB();
         if ("Gerencia".equals(radio)) {
-            //TODO
+            
             user.setName(name);
             user.setPassword(password);
             user.setUsername(login);
+            user.setUserType(radio);
+            userdb.insertUser(user);
         } else {
             if ("Caixa".equals(radio)) {
-                //TODO
                 user.setName(name);
                 user.setPassword(password);
                 user.setUsername(login);
-            } else {
-
+                user.setUserType(radio);
+                userdb.insertUser(user);
             }
         }
 
-        response.sendRedirect("/marketCat/faces/views/cadastrousuario.jsp");
+        
+        ArrayList users = userdb.selectAllUsers();
+        request.setAttribute("users", user);
+        RequestDispatcher mandar = request.getRequestDispatcher("cadastrousuario.jsp");
+        mandar.forward(request, response);
+       
     }
 
     protected void doGet(HttpServletRequest request,
