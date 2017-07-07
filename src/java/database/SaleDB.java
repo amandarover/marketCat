@@ -70,7 +70,7 @@ public class SaleDB {
     }
     
     public void deleteSale(long idProduct, long idSale) {
-        String deleteString = "DELETE FROM sale WHERE idProduct = ? "+
+        String deleteString = "DELETE FROM sale WHERE idProduct = ? " +
                 "AND WHERE idSale = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
@@ -88,7 +88,7 @@ public class SaleDB {
     }
     
     public ArrayList<Product> selectSaleForMonth() { //TODO
-        String deleteString = "SELECT * FROM products";
+        String deleteString = "SELECT * FROM sale";
         ArrayList<Product> productsList = new ArrayList<>();
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
             ResultSet result = statement.executeQuery();
@@ -109,16 +109,36 @@ public class SaleDB {
         }
     }
     
-    public Sale selectSale(int idProduct) {
-        String selectString = "SELECT * FROM sale WHERE idProduct = ? "+
-                "AND idSale = ?";
+    public ArrayList<Sale> selectAllSale() {
+        String deleteString = "SELECT * FROM sale";
+        ArrayList<Sale> saleList = new ArrayList<>();
+        try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
+            ResultSet result = statement.executeQuery();
+            Sale sale;
+            while(result.next()) {
+                sale = new Sale();
+                sale.setIdSale(result.getInt("idSale"));
+                sale.setSaleItem(selectSale(sale.getIdSale()).getSaleItem());
+                sale.setSaleDate(result.getDate("saleDate"));
+                sale.setCpfCustomer(result.getString("name"));
+                saleList.add(sale);
+            }
+            return saleList;
+        } catch (Exception e ) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public Sale selectSale(long idSale) {
+        String selectString = "SELECT * FROM sale WHERE idSale = ? ";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(selectString)){
-            statement.setInt(1, idProduct);
+            statement.setLong(1, idSale);
             ResultSet result = statement.executeQuery();
             Sale sale = null;
             
-            sale.setIdSale(result.getLong("idSale"));
+            sale.setIdSale(idSale);
             sale.setTotalSale(result.getDouble("totalSale"));
             sale.setSaleDate(result.getDate("saleDate"));
             sale.setCpfCustomer(result.getString("cpfCustomer"));
