@@ -68,7 +68,7 @@ public class ProductDB {
             statement.setDouble(6, product.getMinimunStock());
             statement.setDate(7, (Date) product.getValidateDate());
             statement.setDouble(8, product.getStock());
-            statement.setInt(9, (int) product.getIdProduct());
+            statement.setLong(9, product.getIdProduct());
             statement.setDate(10, (Date) product.getExpirationDateCloseout());
             statement.setDouble(11, product.getMinimunCloseout());
             statement.setDouble(12, product.getPercentageCloseout());
@@ -87,7 +87,7 @@ public class ProductDB {
         String deleteString = "DELETE FROM products WHERE idProduct = ?";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
-            statement.setInt(1, idProduct);
+            statement.setLong(1, idProduct);
 
             int rowsDeleted = statement.executeUpdate();
 
@@ -129,11 +129,11 @@ public class ProductDB {
         }
     }
     
-    public Product selectProduct(int idProduct) {
+    public Product selectProduct(long idProduct) {
         String selectString = "SELECT * FROM products WHERE idProduct = ? ";
 
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(selectString)){
-            statement.setInt(1, idProduct);
+            statement.setLong(1, idProduct);
             ResultSet result = statement.executeQuery();
             Product product = null;
             while(result.next()) {

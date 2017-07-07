@@ -2,7 +2,7 @@ package models;
 
 public class SaleItem {
     private long idSaleItem;
-    private int quantity;
+    private double quantity;
     private Product product;    
 
     public long getIdSaleItem() {
@@ -13,11 +13,11 @@ public class SaleItem {
         this.idSaleItem = idSaleItem;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 
