@@ -38,40 +38,40 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Feijão</td>
-                        <td>2</td>
-                        <td>R$3,00</td>
-                        <td>R$6,00</td>
-                        <td>02/02/2016</td>
-                        <td> <img src="../assets/images/feijao.jpg" alt="Feijão" id="imagem-produto"></td>
 
-                    </tr>
-                    <tr>
-                        <td>Alface</td>
-                        <td>1</td>
-                        <td>R$5,00</td>
-                        <td>R$5,00</td>
-                        <td>02/04/2015</td>
-                        <td> <img src="../assets/images/alface.jpg" alt="Feijão" id="imagem-produto"></td>
 
-                    </tr>
-                    <tr>
-                        <td>Couve</td>
-                        <td>3</td>
-                        <td>R$3,00</td>
-                        <td>R$9,00</td>
-                        <td>15/05/2017</td>
-                        <td> <img src="../assets/images/couve.jpg" alt="Feijão" id="imagem-produto"></td>
 
-                    </tr>
+                <c:forEach var="u" items="${sales}">
+
                     <tr>
-                        <td><strong>Valor total</strong></td>
-                        <td> </td>
-                        <td> </td>
-                        <td><strong>R$ 20,00</strong></td>
-                        <td> </td>
+                        <td>${u.cpfCostumer}</td>
+                        <td>${u.saleDate}</td>
+                        <td>${u.totalSale}</td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#newLogin"> Editar
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>
+                            <br><br>
+                            <button type="button" class="btn btn-default btn-xs btn btn-danger"  > Excluir
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </td>
                     </tr>
+                </c:forEach>
+
+
+
+
+
+
+
+                <tr>
+                    <td><strong>Valor total</strong></td>
+                    <td> </td>
+                    <td> </td>
+                    <td><strong></strong></td>
+                    <td> </td>
+                </tr>
 
                 </tbody>
             </table>

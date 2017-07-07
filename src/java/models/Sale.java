@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Sale {
+
     private long idSale;
     private ArrayList<SaleItem> saleItem;
     private double totalSale;
@@ -17,7 +18,7 @@ public class Sale {
     public void setIdSale(long idSale) {
         this.idSale = idSale;
     }
-    
+
     public ArrayList<SaleItem> getSaleItem() {
         return saleItem;
     }

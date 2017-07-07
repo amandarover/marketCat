@@ -4,9 +4,7 @@ import database.ProductDB;
 import database.SaleDB;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import models.Product;
-import models.User;
 
 @WebServlet("/ControllerGraphTable")
 public class ControllerGraphTable extends HttpServlet {
@@ -29,7 +26,11 @@ public class ControllerGraphTable extends HttpServlet {
 
     public void showSales(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException, ParseException {
-        ArrayList sales = saledb.selectSaleForMonth();
+        ArrayList sales = saledb.selectAllSale();
+
+        request.setAttribute("sales", sales);
+        RequestDispatcher send = request.getRequestDispatcher("graph.jsp");
+        send.forward(request, response);
     }
 
     public void checkValidation(HttpServletRequest request,
@@ -37,7 +38,6 @@ public class ControllerGraphTable extends HttpServlet {
         ArrayList<Product> products = productdb.selectAllProducts();
 
         Date todayDate = new Date();
-        //System.out.println(dateFormat.format(date));
 
         for (Product prod : products) {
             Date date = prod.getValidateDate();
@@ -60,11 +60,8 @@ public class ControllerGraphTable extends HttpServlet {
             Logger.getLogger(ControllerGraphTable.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
-    
-    public void alertUser(){
-        
+
+    public void alertUser() {
+
     }
 }
