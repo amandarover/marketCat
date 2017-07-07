@@ -131,6 +131,7 @@ public class Product {
         SimpleDateFormat format = new SimpleDateFormat();
         
         this.expirationDateCloseout = format.parse(expirationDateClouseout);
+       
         
     }
 }
