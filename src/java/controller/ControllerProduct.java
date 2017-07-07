@@ -2,7 +2,10 @@ package controller;
 
 import database.ProductDB;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +18,7 @@ import models.Product;
 public class ControllerProduct extends HttpServlet {
 
     public void getParameters(HttpServletRequest request,
-            HttpServletResponse response) throws IOException, ServletException {
+            HttpServletResponse response) throws IOException, ServletException, ParseException {
 
         String name = request.getParameter("Nome");
         String description = request.getParameter("Descricao");
@@ -63,16 +66,22 @@ public class ControllerProduct extends HttpServlet {
         RequestDispatcher mandar = request.getRequestDispatcher("products.jsp");
         mandar.forward(request, response);
 
-       // response.sendRedirect("/marketCat/faces/views/products.jsp");
+        // response.sendRedirect("/marketCat/faces/views/products.jsp");
     }
 
+    @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
     }
 
+    @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        getParameters(request, response);
+        try {
+            getParameters(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(ControllerProduct.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
