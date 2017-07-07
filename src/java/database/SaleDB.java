@@ -78,7 +78,7 @@ public class SaleDB {
         }
     }
     
-    public ArrayList<Product> selectSaleForMonth() { //TODO
+    public ArrayList<Product> selectSaleForMonth() {
         String deleteString = "SELECT * FROM sale";
         ArrayList<Product> productsList = new ArrayList<>();
         try (PreparedStatement statement = DBServices.getConnection().prepareStatement(deleteString)){
