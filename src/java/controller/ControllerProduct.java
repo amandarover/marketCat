@@ -63,8 +63,8 @@ public class ControllerProduct extends HttpServlet {
         ArrayList listproducts = productdb.selectAllProducts();
 
         request.setAttribute("listproducts", listproducts);
-        RequestDispatcher mandar = request.getRequestDispatcher("products.jsp");
-        mandar.forward(request, response);
+        RequestDispatcher send = request.getRequestDispatcher("products.jsp");
+        send.forward(request, response);
 
         // response.sendRedirect("/marketCat/faces/views/products.jsp");
     }

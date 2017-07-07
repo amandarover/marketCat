@@ -1,9 +1,10 @@
-
 package controller;
 
+import database.ProductDB;
 import database.UserDB;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +33,15 @@ public class ControllerLogin extends HttpServlet {
             if (login.equals(username)) {
                 System.out.println("Usuario existe");
                 if ("Gerencia".equals(user1.getUserType())) {
-                    response.sendRedirect("products.jsp");
+                    //response.sendRedirect("products.jsp");
+                    //Create array to show all products
+                    ProductDB productdb = new ProductDB();
+                    ArrayList listproducts = productdb.selectAllProducts();
+
+                    request.setAttribute("listproducts", listproducts);
+                    RequestDispatcher send = request.getRequestDispatcher("products.jsp");
+                    send.forward(request, response);
+
                 }
             } else {
                 System.out.println("Usuario não existe");

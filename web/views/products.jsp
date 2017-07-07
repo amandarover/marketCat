@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="models.Product"%>
+
 <!DOCTYPE html>
 <html>
     <head>
