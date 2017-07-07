@@ -1,5 +1,7 @@
 package models;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Product {
@@ -124,7 +126,11 @@ public class Product {
     
     
     //CRIAR ALGO PARA TRANSFORMAR STRING EM DATE
-    public void setExpirationDateCloseout(String expirationDateClouseout) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setExpirationDateCloseout(String expirationDateClouseout) throws ParseException {
+
+        SimpleDateFormat format = new SimpleDateFormat();
+        
+        this.expirationDateCloseout = format.parse(expirationDateClouseout);
+        
     }
 }
